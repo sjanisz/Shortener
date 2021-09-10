@@ -3,4 +3,4 @@ from peewee import *
 
 app = Flask(__name__)
 
-db = SqliteDatabase(app)
+db = SqliteDatabase("shortener.db")
