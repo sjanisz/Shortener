@@ -1,4 +1,4 @@
-# Shortener
+# Shortener - for longer links shortening
 
 <pre>
 Project setup steps:
