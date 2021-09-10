@@ -27,9 +27,7 @@ Project setup steps:
 	3.3. Activate venv: . venv/bin/activate
 	3.4. Install Flask: pip install Flask
 4. Start http server:
-	4.1. go to project directory where file 
-	4.2. export FLASK_APP=Shortener
-	4.3. OPTIONAL (for debug): export FLASK_ENV=development
-	4.4. flask run
+	4.1. go to project directory
+	4.2. python Shortener.py
 5. 
 </pre>

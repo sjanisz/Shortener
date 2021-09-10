@@ -1,19 +1,9 @@
-from flask import Flask
-from flask import render_template
-from markupsafe import escape
-from peewee import SqliteDatabase
+from app import app
+from models import *
+from views import *
 
-app = Flask(__name__)
+def create_tables():
+    db.database.create_tables([User], safe=True)
 
-@app.route("/")
-def index():
-    db = SqliteDatabase("shortener.db")
-    db.connect()
-    return render_template("index.html")
-
-@app.route("/success")
-def testRoute():
-    return render_template("success.html")
-
-# def testMe(a, b):
-#     return a + b
+if __name__ == '__main__':
+    app.run(debug=True)
