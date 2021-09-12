@@ -48,3 +48,21 @@ def _populateNounTableWithDummyData():
     if(Noun.select().count() == 0):
         for noun in NounInitData:
             Noun(name=noun).save()
+
+# Returns link
+def AddNewLinkMapToDatabase(link):
+    # TODO: validate if link is valid (ping?)
+
+    # result = Map.select().where(Map.destination_address == link)
+    # no need to handle existing links because it should not be unique
+
+    # get random Verb + Adjective + Noun
+    # TODO: avoid duplicates (query db agains above set)
+    verb = Verb.select().order_by(fn.Random()).get()
+    adjective = Adjective.select().order_by(fn.Random()).get()
+    noun = Noun.select().order_by(fn.Random()).get()
+
+    createdMap = Map.create(destination_address=link, verb=verb, adjective=adjective, noun=noun)
+
+    # TODO: change way of receiving host address (including port)
+    return f"localhost:5000/{createdMap.verb.name}{createdMap.adjective.name}{createdMap.noun.name}"

@@ -6,13 +6,27 @@
 <body>
     <center>
         Hello, please provide link to be shortened below<br>
-        <input type="text" id="fname" name="fname" size="75" style="text-align:center;"><br><br>
-        <button type="button" onClick="goToSuccess()">Shorten!</button>
+        <input type="text" id="linkToShort" size="75" placeholder ="Enter link..." style="text-align:center;"><br><br>
+        <button type="button" onClick="shorten()">Shorten!</button>
     </center>
 
     <script>
-        function goToSuccess() {
-            window.location.href="/success";
+        function shorten() {
+            let link = document.getElementById("linkToShort").value;
+            let dataToSend = JSON.stringify({"linkToShort" : link});
+
+            fetch("/shorten", {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: dataToSend
+            }).then(
+                () => {
+                    window.location.href="/success";
+                }
+            )
         }
     </script>
 </body>
