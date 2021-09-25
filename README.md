@@ -1,4 +1,8 @@
-# Shortener - for longer links shortening
+# Shortener - for longer links shortening - NOT READY YET
+
+Still TODO's for app:
+	- go to mapped URL for shortened link;
+	- think about that form and prevent re-generation of shortened link on page refresh with result.
 
 <pre>
 Project setup steps:
