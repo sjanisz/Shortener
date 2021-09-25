@@ -6,8 +6,6 @@ from models import *
 
 @app.route("/")
 def indexRoute():
-    db = SqliteDatabase("shortener.db")
-    db.connect()
     return render_template("index.html")
 
 @app.route("/shorten", methods=["POST"])
