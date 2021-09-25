@@ -11,9 +11,10 @@ def indexRoute():
 @app.route("/shorten", methods=["POST"])
 def shortenRoute():
     if request.method == "POST":
-        jsonRequest = request.json
-        createdLink = AddNewLinkMapToDatabase(jsonRequest['linkToShort'])
-        return render_template("success.html", shortenedLink=createdLink)
+        linkToShorten = request.form["linkToShort"]
+        createdLink = AddNewLinkMapToDatabase(linkToShorten)
+        return render_template("success.html", shortenedLink = createdLink)
+        # return createdLink
     else:
         # TODO: return render_template('login.html', error="wrong method")
         pass

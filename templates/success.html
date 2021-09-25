@@ -4,12 +4,14 @@
     <title>Shortener - simple link shorter app</title>
 </head>
 <body>
-    <b>Success! Your link: {{ shortenedLink }}</b>
-    <br><br>
-    <button type="button" onClick="goToIndex()">Go back to homepage</button>
-
+    <center>
+        <b>Success! Your link: {{ shortenedLink }}</b>
+        <br><br>
+        <button type="button" onClick="goToIndex()">Go back to homepage</button>
+    </center>
+    
     <script>
-        function goToSuccess() {
+        function goToIndex() {
             window.location.href="/";
         }
     </script>   

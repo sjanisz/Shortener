@@ -61,7 +61,6 @@ AdjectiveInitData = {
                     "Intelligent",
                     "Nice",
                     "Emotional",
-                    "Bad-tempered",
                     "Nervous",
                     "Mean",
                     "Distracted",

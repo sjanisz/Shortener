@@ -5,9 +5,12 @@
 </head>
 <body>
     <center>
-        Hello, please provide link to be shortened below<br>
-        <input type="text" id="linkToShort" size="75" placeholder ="Enter link..." style="text-align:center;"><br><br>
-        <button type="button" onClick="shorten()">Shorten!</button>
+        <form action = "http://localhost:5000/shorten" method="POST">
+            Hello, please provide link to be shortened below<br>
+            <input type="text" name="linkToShort" size="75" placeholder ="Enter link..." style="text-align:center;"><br><br>
+            <input type="submit" value="Shorten!"/>
+            <!-- <button type="button" onClick="shorten()">Shorten!</button> -->
+        </form>
     </center>
 
     <script>
@@ -22,9 +25,11 @@
                     'Content-Type': 'application/json'
                 },
                 body: dataToSend
-            }).then(
-                () => {
-                    window.location.href="/success";
+            })
+            .then(response => response.text())
+            .then(
+                (response) => {
+                    // load page from html?
                 }
             )
         }

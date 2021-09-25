@@ -1,0 +1,11 @@
+SELECT * FROM map
+ORDER BY Id DESC
+
+
+SELECT * FROM verb
+WHERE id = (SELECT verb_id FROM map WHERE id = 59)
+
+SELECT * FROM adjective
+WHERE id = (SELECT adjective_id FROM map WHERE id = 59)
+
+
